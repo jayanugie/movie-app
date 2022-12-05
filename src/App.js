@@ -40,19 +40,7 @@ const App = () => {
 
   return (
     <div>
-      <TopNavbar />
-
-      <div className="flex justify-center">
-        <div className="flex flex-col">
-          <h1 className="text-3xl font-bold">Movie App by jayanugie</h1>
-          <input
-            placeholder="search"
-            className="border-2 rounded-md"
-            onChange={({ target }) => search(target.value)}
-          />
-        </div>
-      </div>
-
+      <TopNavbar search={search} />
       {/* movies */}
       <PopularMovieList />
     </div>
