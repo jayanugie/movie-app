@@ -5,7 +5,7 @@ const TopNavbar = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="bg-zinc-900">
+    <div className="bg-zinc-900 sticky top-0">
       <div className="container mx-auto">
         <div className="flex flex-row mx-5">
           {/* logo */}
@@ -26,28 +26,32 @@ const TopNavbar = (props) => {
           {/* navigation */}
           {/* mobile menu */}
           <div className="flex lg:hidden justify-end lg:basis-1/3 basis-1/5">
-            <div
-              className="p-5 space-y-2 cursor-pointer"
-              onClick={() => setIsNavOpen((prev) => !prev)}
-            >
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            </div>
+            <div>
+              <div
+                className="p-5 space-y-2 cursor-pointer"
+                onClick={() => setIsNavOpen((prev) => !prev)}
+              >
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              </div>
 
-            <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-              {/* nav mobile  */}
-              <ul className="text-neutral-400 space-y-2 p-5">
-                <li className="p-2 hover:bg-zinc-700 hover:text-neutral-200">
-                  <a href="/popular">Popular</a>
-                </li>
-                <li className="p-2 hover:bg-zinc-700 hover:text-neutral-200">
-                  <a href="/new-release">New Release</a>
-                </li>
-                <li className="p-2 hover:bg-zinc-700 hover:text-neutral-200">
-                  <a href="/top-rated">Top Rated</a>
-                </li>
-              </ul>
+              <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+                {/* nav mobile  */}
+                <div className="absolute right-0 w-full">
+                  <ul className="text-neutral-400 space-y-2 p-5 bg-black">
+                    <li className="p-2 hover:bg-zinc-700 hover:text-neutral-200">
+                      <a href="/popular">Popular</a>
+                    </li>
+                    <li className="p-2 hover:bg-zinc-700 hover:text-neutral-200">
+                      <a href="/new-release">New Release</a>
+                    </li>
+                    <li className="p-2 hover:bg-zinc-700 hover:text-neutral-200">
+                      <a href="/top-rated">Top Rated</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 

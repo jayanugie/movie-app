@@ -12,20 +12,14 @@ code {
     monospace;
 }
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 .hideMenuNav {
   display: none;
 }
+
 .showMenuNav {
   display: block;
-  position: absolute;
-  width: 100%;
-  top: 100%;
-  right: 0;
-  background: black;
 }
