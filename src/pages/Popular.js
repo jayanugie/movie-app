@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getMovieList, searchMovie } from "./api";
-import TopNavbar from "./components/TopNavbar";
+import { getMovieList, searchMovie } from "../api";
+import TopNavbar from "../components/TopNavbar";
 
-const App = () => {
+const Popular = () => {
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
@@ -47,4 +47,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Popular;
