@@ -5,13 +5,13 @@ const TopNavbar = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 bg-zinc-900">
+    <div className="bg-zinc-900">
       <div className="container mx-auto">
         <div className="flex flex-row mx-5">
           {/* logo */}
           <div className="lg:basis-1/3 basis-1/5 ">
             <a href="/">
-              <img src="/icons/netflix.png" className="h-16" alt="logo" />
+              <img src="/assets/netflix.png" className="h-16" alt="logo" />
             </a>
           </div>
           {/* search */}
