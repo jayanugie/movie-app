@@ -4,10 +4,12 @@ import TopNavbar from "../components/global/TopNavbar";
 
 const Popular = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [firstPopularMovie, setFirstPopularMovies] = useState([]);
 
   useEffect(() => {
     getMovieList().then((result) => {
       setPopularMovies(result);
+      setFirstPopularMovies(result[0]);
     });
   }, []);
 
@@ -36,28 +38,29 @@ const Popular = () => {
     }
   };
 
-  console.log({ popularMovies: popularMovies });
-
   return (
     <div>
       <TopNavbar search={search} />
       {/* movies */}
 
       <div
-        className="h-96 md:bg-cover bg-center"
-        style={{ backgroundImage: "url(/assets/mountain.jpg)" }}
+        className="bg-cover md:bg-right-top"
+        style={{
+          backgroundImage: `url(${process.env.REACT_APP_BASEIMGURL}/${firstPopularMovie.backdrop_path})`,
+        }}
       >
-        <div className="ml-10 lg:ml-28 space-y-3 p-5">
-          <h1 className="lg:text-5xl text-3xl mt-16 font-semibold">The Walking Dead</h1>
-          <p className="lg:w-1/3 w-1/2 text-sm lg:text-base">
-            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used
-            in laying out print, graphic or web designs
+        <div className="space-y-3 md:p-28 p-16 text-white brightness-150">
+          <h1 className="lg:text-5xl text-3xl font-semibold">
+            {firstPopularMovie.title}
+          </h1>
+          <p className="lg:w-1/2 text-sm lg:text-base">
+            {firstPopularMovie.overview}
           </p>
-          <div className="flex text-white space-x-5 pt-5">
-            <button className="p-3 rounded-2xl bg-red-700 text-xs lg:text-base">
+          <div className="flex text-white space-x-5 pt-5 pb-2">
+            <button className="p-3 rounded-full bg-red-700 text-xs lg:text-base hover:bg-red-800">
               WATCH
             </button>
-            <button className="p-3 rounded-2xl bg-black text-xs lg:text-base">
+            <button className="p-3 rounded-full bg-neutral-900 hover:bg-black text-xs lg:text-base">
               + Add List
             </button>
           </div>
