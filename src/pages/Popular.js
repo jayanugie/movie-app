@@ -17,13 +17,13 @@ const Popular = () => {
   const PopularMovieList = () => {
     return popularMovies.map((movie, i) => {
       return (
-        <div key={i}>
-          <div>{movie.title}</div>
+        <div key={i} className="text-neutral-200 p-5 border sm:w-52">
           <img
-            className=" h-60"
+            className="rounded-md"
             src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
             alt="poster"
           />
+          <p>{movie.title}</p>
           <div>{movie.release_date}</div>
           <div>{movie.vote_average}</div>
         </div>
@@ -70,7 +70,11 @@ const Popular = () => {
 
       <MiddleNavbar />
 
+      <div className="border bg-zinc-900 p-5">
+        <div className="container mx-auto flex flex-wrap">
       <PopularMovieList />
+      </div>
+      </div>
     </div>
   );
 };

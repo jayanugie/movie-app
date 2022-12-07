@@ -10,13 +10,13 @@ const MiddleNavbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-neutral-200 font-normal sm:text-lg flex space-x-1 sm:h-7 h-5"
+                  ? "text-neutral-200 font-normal text-lg flex space-x-1 h-7"
                   : "text-sm hover:text-neutral-200 font-light flex space-x-1 h-5"
               }
               to="/popular"
             >
               <img src="/assets/gas.png" alt="gas" />
-              <p>Popular</p>
+              <p className="hidden sm:flex">Popular</p>
             </NavLink>
           </div>
         </div>
@@ -25,13 +25,13 @@ const MiddleNavbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-neutral-200 font-normal sm:text-lg flex space-x-1 sm:h-7 h-5"
+                  ? "text-neutral-200 font-normal text-lg flex space-x-1 h-7"
                   : "text-sm hover:text-neutral-200 font-light flex space-x-1 h-5"
               }
               to="/new-release"
             >
               <img src="/assets/new.png" alt="gas" />
-              <p>New Release</p>
+              <p className="hidden sm:flex">New Release</p>
             </NavLink>
           </div>
         </div>
@@ -40,13 +40,13 @@ const MiddleNavbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-neutral-200 font-normal sm:text-lg flex space-x-1 sm:h-7 h-5"
+                  ? "text-neutral-200 font-normal text-lg flex space-x-1 h-7"
                   : "text-sm hover:text-neutral-200 font-light flex space-x-1 h-5"
               }
               to="/top-rated"
             >
               <img src="/assets/star.png" alt="gas" />
-              <p>Top Rated</p>
+              <p className="hidden sm:flex">Top Rated</p>
             </NavLink>
           </div>
         </div>
