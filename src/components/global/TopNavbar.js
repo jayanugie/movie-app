@@ -59,7 +59,9 @@ const TopNavbar = (props) => {
           <div className="basis-1/3  text-neutral-400 space-x-10 justify-end p-5 font-light hidden lg:flex">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "text-neutral-200 font-normal" : undefined
+                isActive
+                  ? "text-neutral-200 font-normal"
+                  : "hover:text-neutral-200"
               }
               to="/popular"
             >
@@ -67,7 +69,9 @@ const TopNavbar = (props) => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "text-neutral-200 font-normal" : undefined
+                isActive
+                  ? "text-neutral-200 font-normal"
+                  : "hover:text-neutral-200"
               }
               to="/new-release"
             >
@@ -75,7 +79,9 @@ const TopNavbar = (props) => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "text-neutral-200 font-normal" : undefined
+                isActive
+                  ? "text-neutral-200 font-normal"
+                  : "hover:text-neutral-200"
               }
               to="/top-rated"
             >

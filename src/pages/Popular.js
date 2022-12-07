@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getMovieList, searchMovie } from "../api";
+import MiddleNavbar from "../components/global/MiddleNavbar";
 import TopNavbar from "../components/global/TopNavbar";
 
 const Popular = () => {
@@ -49,7 +50,7 @@ const Popular = () => {
           backgroundImage: `url(${process.env.REACT_APP_BASEIMGURL}/${firstPopularMovie.backdrop_path})`,
         }}
       >
-        <div className="space-y-3 md:p-28 p-16 text-white brightness-150">
+        <div className="space-y-3 md:p-28 p-16 text-white">
           <h1 className="lg:text-5xl text-3xl font-semibold">
             {firstPopularMovie.title}
           </h1>
@@ -66,6 +67,8 @@ const Popular = () => {
           </div>
         </div>
       </div>
+
+      <MiddleNavbar />
 
       <PopularMovieList />
     </div>
