@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getMovieList, searchMovie } from "../api";
+import Footer from "../components/global/Footer";
 import MiddleNavbar from "../components/global/MiddleNavbar";
 import TopNavbar from "../components/global/TopNavbar";
 
@@ -83,6 +84,8 @@ const Popular = () => {
           <PopularMovieList />
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
