@@ -1,12 +1,14 @@
 import React from "react";
-import MiddleNavbar from "../components/global/MiddleNavbar";
+import ComingSoon from "../components/global/ComingSoon";
+import Footer from "../components/global/Footer";
 import TopNavbar from "../components/global/TopNavbar";
 
 const TopRated = () => {
   return (
     <div>
       <TopNavbar />
-      <MiddleNavbar />
+      <ComingSoon />
+      <Footer />
     </div>
   );
 };
