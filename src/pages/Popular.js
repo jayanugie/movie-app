@@ -15,44 +15,8 @@ const Popular = () => {
     });
   }, []);
 
-  const PopularMovieList = () => {
-    return popularMovies.map((movie, i) => {
-      const date = new Date(movie.release_date);
-      let year = date.getFullYear();
-
-      return (
-        <div key={i} className="text-neutral-200 p-5 sm:w-52">
-          <img
-            className="rounded-md"
-            src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
-            alt="poster"
-          />
-          <p className="truncate mt-3 ">{movie.title}</p>
-          <div className="flex flex-row text-xs text-neutral-500">
-            <p className="basis-1/2">{year}</p>
-            <div className="basis-1/2 flex justify-end text-yellow-300 space-x-2">
-              <img src="/assets/yellow-star.png" alt="star" className="h-3 mt-0.5" />
-              <p>{movie.vote_average}</p>
-            </div>
-          </div>
-        </div>
-      );
-    });
-  };
-
-  const search = async (q) => {
-    if (q.length > 3) {
-      const query = await searchMovie(q);
-      setPopularMovies(query.results);
-      console.log({ query: query });
-    }
-  };
-
-  return (
-    <div>
-      <TopNavbar search={search} />
-      {/* movies */}
-
+  const Backdrop = () => {
+    return (
       <div
         className="bg-cover md:bg-right-top"
         style={{
@@ -76,15 +40,56 @@ const Popular = () => {
           </div>
         </div>
       </div>
+    );
+  };
 
+  const PopularMovieList = () => {
+    return popularMovies.map((movie, i) => {
+      const date = new Date(movie.release_date);
+      let year = date.getFullYear();
+
+      return (
+        <div key={i} className="text-neutral-200 p-5 sm:w-52 w-28">
+          <img
+            className="rounded-md"
+            src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
+            alt="poster"
+          />
+          <p className="truncate mt-3 ">{movie.title}</p>
+          <div className="flex flex-row text-xs text-neutral-500">
+            <p className="basis-1/2">{year}</p>
+            <div className="basis-1/2 flex justify-end text-yellow-300 space-x-2">
+              <img
+                src="/assets/yellow-star.png"
+                alt="star"
+                className="h-3 mt-0.5"
+              />
+              <p>{movie.vote_average}</p>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  };
+
+  const search = async (q) => {
+    if (q.length > 3) {
+      const query = await searchMovie(q);
+      setPopularMovies(query.results);
+      console.log({ query: query });
+    }
+  };
+
+  return (
+    <div>
+      <TopNavbar search={search} />
+      <Backdrop />
       <MiddleNavbar />
-
       <div className="bg-zinc-900 p-5">
-        <div className="container mx-auto flex flex-wrap">
+        <div className="container mx-auto flex flex-wrap justify-center">
           <PopularMovieList />
         </div>
       </div>
-
       <Footer />
     </div>
   );
