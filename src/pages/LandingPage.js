@@ -7,7 +7,7 @@ const LandingPage = () => {
     return (
       <div className="h-screen bg-zinc-900 text-white">
         <div className="flex justify-center pt-80">
-          <div>
+          <div className="px-5 sm:p-0">
             <h1 className="text-5xl font-serif bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-neutral-200">
               Movie App - Netflix Redesign
             </h1>
