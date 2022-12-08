@@ -49,13 +49,13 @@ const Popular = () => {
       let year = date.getFullYear();
 
       return (
-        <div key={i} className="text-neutral-200 p-5 sm:w-52 w-28">
+        <div key={i} className="text-neutral-200 p-2 sm:p-5 sm:w-52 w-28">
           <img
             className="rounded-md"
             src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
             alt="poster"
           />
-          <p className="truncate mt-3 ">{movie.title}</p>
+          <p className="truncate mt-3 sm:text-base text-xs">{movie.title}</p>
           <div className="flex flex-row text-xs text-neutral-500">
             <p className="basis-1/2">{year}</p>
             <div className="basis-1/2 flex justify-end text-yellow-300 space-x-2">
