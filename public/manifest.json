@@ -4,6 +4,11 @@
   "icons": [
     {
       "src": "./assets/N.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/N.png",
       "sizes": "image/png",
       "type": "512x512"
     }
